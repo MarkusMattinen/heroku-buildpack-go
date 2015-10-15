@@ -232,6 +232,10 @@ else
     go get "${FLAGS[@]}" $pkgs
 fi
 
+if [ -f $build/postinstall.sh ]; then
+  bash $build/postinstall.sh
+fi
+
 rm -rf $build/.heroku
 
 mkdir -p $build/.profile.d
